@@ -1,0 +1,85 @@
+body {
+  background-color: #37323e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h3 {
+  color: #f0f7f4;
+}
+
+.gameBoard {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  padding: 5px;
+}
+
+.card {
+  background-color: #628395;
+  border: 1px solid black;
+  height: 125px;
+  width: 130px;
+  border-radius: 5px;
+  box-shadow: 6px 8px #141216;
+  transition: 0.3s;
+  font-size: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 8px 8px 4px #49626f;
+}
+
+.card-flipped {
+  background-color: #fa824c;
+  border: 1px solid black;
+  height: 125px;
+  width: 125px;
+  border-radius: 5px;
+  box-shadow: 6px 8px #141216;
+  font-size: 100px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.alert-match {
+  display: inline;
+}
+
+.card-matched {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+}
+
+@media screen and (max-width: 600px) {
+  .gameBoard {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    padding: 10px;
+  }
+}
